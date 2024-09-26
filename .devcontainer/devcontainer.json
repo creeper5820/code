@@ -1,0 +1,24 @@
+{
+	"name": "code",
+	"image": "code",
+	"privileged": true,
+	"mounts": [
+		{
+			"source": "/dev",
+			"target": "/dev",
+			"type": "bind"
+		},
+		{
+			"source": "/tmp/.X11-unix",
+			"target": "/tmp/.X11-unix",
+			"type": "bind"
+		}
+	],
+	"containerEnv": {
+		"DISPLAY": ":0"
+	},
+	"runArgs": [
+		"--network",
+		"host"
+	]
+}
